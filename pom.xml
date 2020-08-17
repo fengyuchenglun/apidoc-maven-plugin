@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.fengyuchenglun</groupId>
+    <artifactId>apidoc-maven-plugin</artifactId>
+    <version>1.0.10</version>
+
+    <name>apidoc-maven-plugin</name>
+    <description>easy use apidoc with maven.</description>
+    <url>https://github.com/fengyuchenglun/apidoc-maven-plugin</url>
+    <licenses>
+        <license>
+            <name>MIT License</name>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>duanledexianxianxian</id>
+            <name>duanledexianxianxian</name>
+            <email>fengyuchenglun@foxmail.com</email>
+        </developer>
+    </developers>
+    <scm>
+        <connection>https://github.com/fengyuchenglun/apidoc-maven-plugin.git</connection>
+        <developerConnection>https://github.com/fengyuchenglun/apidoc-maven-plugin.git</developerConnection>
+        <url>https://github.com/fengyuchenglun/apidoc-maven-plugin.git</url>
+    </scm>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <maven.core.version>3.6.3</maven.core.version>
+        <maven.plugin.api.version>3.6.3</maven.plugin.api.version>
+        <maven.plugin.version>3.5.2</maven.plugin.version>
+        <maven.plugin.annotations.version>3.6.0</maven.plugin.annotations.version>
+        <maven.source.plugin.version>3.2.1</maven.source.plugin.version>
+    </properties>
+
+    <packaging>maven-plugin</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-core</artifactId>
+            <version>${maven.core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-plugin-api</artifactId>
+            <version>${maven.plugin.api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugin-tools</groupId>
+            <artifactId>maven-plugin-annotations</artifactId>
+            <version>${maven.plugin.annotations.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fengyuchenglun</groupId>
+            <artifactId>apidoc-springmvc</artifactId>
+            <version>${version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-plugin-plugin</artifactId>
+                <version>${maven.plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${maven.source.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>bintray-forever-maven</id>
+            <name>forever-maven</name>
+            <url>https://api.bintray.com/maven/forever/maven/apidoc-maven-plugin/;publish=1</url>
+        </repository>
+    </distributionManagement>
+
+
+</project>
