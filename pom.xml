@@ -6,7 +6,7 @@
 
     <groupId>com.github.fengyuchenglun</groupId>
     <artifactId>apidoc-maven-plugin</artifactId>
-    <version>1.0.10</version>
+    <version>1.0.11</version>
 
     <name>apidoc-maven-plugin</name>
     <description>easy use apidoc with maven.</description>
@@ -36,6 +36,7 @@
         <maven.plugin.version>3.5.2</maven.plugin.version>
         <maven.plugin.annotations.version>3.6.0</maven.plugin.annotations.version>
         <maven.source.plugin.version>3.2.1</maven.source.plugin.version>
+        <maven.compiler.version>3.8.1</maven.compiler.version>
     </properties>
 
     <packaging>maven-plugin</packaging>
@@ -59,7 +60,7 @@
         <dependency>
             <groupId>com.github.fengyuchenglun</groupId>
             <artifactId>apidoc-springmvc</artifactId>
-            <version>${version}</version>
+            <version>1.0.11</version>
         </dependency>
     </dependencies>
 
@@ -68,6 +69,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.version}</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
