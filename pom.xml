@@ -6,7 +6,7 @@
 
     <groupId>com.github.fengyuchenglun</groupId>
     <artifactId>apidoc-maven-plugin</artifactId>
-    <version>1.0.11</version>
+    <version>1.0.12</version>
 
     <name>apidoc-maven-plugin</name>
     <description>easy use apidoc with maven.</description>
@@ -60,7 +60,7 @@
         <dependency>
             <groupId>com.github.fengyuchenglun</groupId>
             <artifactId>apidoc-springmvc</artifactId>
-            <version>1.0.11</version>
+            <version>1.0.12</version>
         </dependency>
     </dependencies>
 
